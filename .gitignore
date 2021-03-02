@@ -1,0 +1,4 @@
+# Project exclude paths
+/all/target/
+/core/target/
+/v1_8_R3/target/

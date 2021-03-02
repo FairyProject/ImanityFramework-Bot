@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>parent</artifactId>
+        <groupId>org.imanity.framework.bukkit.bot</groupId>
+        <version>0.1</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>core</artifactId>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>imanity-libraries</id>
+            <url>https://maven.imanity.dev/repository/imanity-libraries/</url>
+        </snapshotRepository>
+        <repository>
+            <id>imanity-libraries</id>
+            <url>https://maven.imanity.dev/repository/imanity-libraries/</url>
+        </repository>
+    </distributionManagement>
+
+    <repositories>
+        <!-- Imanity Repository -->
+        <repository>
+            <id>imanity-libraries</id>
+            <url>https://maven.imanity.dev/repository/imanity-libraries</url>
+        </repository>
+
+        <!-- Jit Pack Repository -->
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>19.0.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.imanity.paperspigot</groupId>
+            <artifactId>paper1.8.8</artifactId>
+            <version>1.8.8</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.dmulloy2</groupId>
+            <artifactId>ProtocolLib</artifactId>
+            <version>4.5.1</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.imanity.framework</groupId>
+            <artifactId>bukkit-common</artifactId>
+            <version>0.2-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+</project>

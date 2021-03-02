@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.imanity.framework.bukkit.bot</groupId>
+    <artifactId>parent</artifactId>
+    <packaging>pom</packaging>
+    <version>0.1</version>
+    <modules>
+        <module>core</module>
+        <module>v1_8_R3</module>
+        <module>all</module>
+    </modules>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>imanity-libraries</id>
+            <url>https://maven.imanity.dev/repository/imanity-libraries/</url>
+        </snapshotRepository>
+        <repository>
+            <id>imanity-libraries</id>
+            <url>https://maven.imanity.dev/repository/imanity-libraries/</url>
+        </repository>
+    </distributionManagement>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+</project>
