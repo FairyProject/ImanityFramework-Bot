@@ -24,10 +24,7 @@ import org.imanity.framework.bukkit.reflection.wrapper.FieldWrapper;
 import org.imanity.framework.bukkit.util.TaskUtil;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -38,7 +35,7 @@ public class EntityBot extends EntityPlayer implements Bot {
     private static final float EPSILON = 0.005F;
 
     @Autowired
-    private static BotFactory BOT_FACTORY;
+    private static Optional<BotFactory> BOT_FACTORY;
 
     private final PlayerControllerLook lookController;
     private final PlayerControllerMove moveController;
@@ -83,6 +80,11 @@ public class EntityBot extends EntityPlayer implements Bot {
 
     public PlayerNavigation getNavigation() {
         return this.navigation;
+    }
+
+    public void playArmAnimation() {
+        PacketPlayInArmAnimation packet = new PacketPlayInArmAnimation();
+        this.playerConnection.a(packet);
     }
 
     @Override
@@ -250,7 +252,7 @@ public class EntityBot extends EntityPlayer implements Bot {
 
         this.world.removeEntity(this);
 
-        BOT_FACTORY.removeBot(this);
+        BOT_FACTORY.ifPresent(botFactory -> botFactory.removeBot(this));
     }
 
     @Override

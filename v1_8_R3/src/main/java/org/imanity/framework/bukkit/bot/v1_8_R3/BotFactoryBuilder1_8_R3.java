@@ -36,7 +36,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Component
+@Component(throwIfNotRegistered = false)
 public class BotFactoryBuilder1_8_R3 implements BotFactoryBuilder {
 
     @Autowired
